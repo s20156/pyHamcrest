@@ -1,1 +1,2 @@
 pyhamcrest
+py3-validate-email

@@ -3,6 +3,7 @@ import unittest
 
 from Worker import ProductionWorker
 from hamcrest import *
+from Matcher import valid_email
 
 class WorkerTest(unittest.TestCase):
     def setUp(self):
@@ -34,3 +35,6 @@ class WorkerTest(unittest.TestCase):
 
     def testChangeNumberBetween1and2(self):
         assert_that(self.temp.get_change_number(), greater_than_or_equal_to(1), less_than_or_equal_to(2))
+
+    def testOwnMatcher(self):
+        assert_that(self.temp.get_email(), is_(valid_email()))
